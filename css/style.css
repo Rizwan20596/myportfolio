@@ -196,7 +196,7 @@ a:hover {
 .title-s {
   font-weight: 600;
   color: #1e1e1e;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 /*--/ Title A /--*/
@@ -385,7 +385,7 @@ a:hover {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #fe6f61;
+  background: #d60b2d;
   color: #fff;
   width: 44px;
   height: 44px;
@@ -514,7 +514,7 @@ a:hover {
 .navbar-b.navbar-reduce .active > .nav-link:before,
 .navbar-b.navbar-reduce .nav-link.show:before,
 .navbar-b.navbar-reduce .nav-link.active:before {
-  width: 35px;
+  width: 50%;
 }
 
 .navbar-b.navbar-trans .nav-link:before {
@@ -762,11 +762,21 @@ a:hover {
 /*======================================
 //--//-->   SERVICES
 ======================================*/
+.grid-container{
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+}
+
+.grid-container .grid-container-item {
+  display: inline-grid;
+}
 
 .service-box {
+  display: inline-flex;
   background-color: #fff;
   padding: 2.5rem 1.3rem;
   height: 350px;
+  width: 365px;
   border-radius: 1rem;
   margin-bottom: 3rem;
 }
@@ -776,11 +786,22 @@ a:hover {
   color: #fff;
   background-color: #d60b2d;
   box-shadow: 0 0 0 10px #e9e4ec;
-}
+  }
 
 .service-box .service-ico {
-  margin-bottom: 1rem;
+  margin: 1rem;
   color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-box .service-content {
+    display: flex;
+    min-width: 180px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-box .ico-circle {
@@ -789,14 +810,21 @@ a:hover {
 }
 
 .service-box .s-title {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  text-align: start;
+  width: 100%;
   padding: 0.4rem 0;
 }
 
 .service-box .s-description {
   color: #4e4e4e;
+  text-align: start;
+  width: 100%;
+}
+
+.service-box:hover .s-description {
+  color: #d60b2d;
 }
 /*======================================
 //--//-->   CONTACT CALL TO ACTION
@@ -833,6 +861,22 @@ a:hover {
 /*======================================
 //--//-->   PORTFOLIO
 ======================================*/
+.grid-work-item-container{
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+  gap: 1.2em;
+}
+
+.grid-work-item-container .grid-work-item {
+  display: inline-grid;
+}
+
+.grid-work-item-container .grid-work-item .work-box { 
+  border-radius: 8%;
+}
+.grid-work-item-container .grid-work-item .work-box .work-img{
+  border-radius: 8% 0%;
+}
 
 .work-box {
   margin-bottom: 5rem;
@@ -883,7 +927,7 @@ a:hover {
 }
 
 .w-title {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 /*======================================
@@ -1012,13 +1056,13 @@ a:hover {
 footer {
   text-align: center;
   color: #fff;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
   background-color: #d60b2d;
 }
 
 footer .copyright {
   margin-bottom: 0.3rem;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 footer .credits {
@@ -1126,12 +1170,24 @@ footer .credits a {
   .counter-box {
     margin-bottom: 1.8rem;
   }
+  .grid-container { 
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  .grid-work-item-container{
+    grid-template-columns: repeat(1, 1fr); 
+  }
 }
 
 @media (min-width: 767px) {
   .about-mf .box-pl2 {
     margin-top: 3rem;
     padding-left: 0rem;
+  }
+  .grid-container { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .grid-work-item-container{
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   .card-blog {
@@ -1191,11 +1247,23 @@ footer .credits a {
   .testimonial-box .description {
     padding: 0 8rem;
   }
+  .grid-container { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  .grid-work-item-container{
+    grid-template-columns: repeat(3, 1fr); 
+  }
 }
 
 @media (min-width: 1200px) {
   .testimonial-box .description {
     padding: 0 13rem;
+  }
+  .grid-container { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  .grid-work-item-container{
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
